@@ -11,7 +11,7 @@ ARG USER=user
 ARG UID=10001
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
-  ca-certificates bash tzdata librocksdb-dev adduser curl aria2 \
+  ca-certificates bash tzdata librocksdb-dev adduser \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -32,14 +32,12 @@ RUN adduser \
     --uid "${UID}" \
     "${USER}"
 
-RUN mkdir -p /var/lib/nimbus/ee-secret && chown -R ${USER}:${USER} /var/lib/nimbus && chmod 700 /var/lib/nimbus && chmod 777 /var/lib/nimbus/ee-secret
+RUN mkdir -p /var/lib/nimbus && chown -R ${USER}:${USER} /var/lib/nimbus && chmod 700 /var/lib/nimbus
 
-RUN cp /home/user/nimbus-eth1/build/nimbus_execution_client /usr/local/bin/ && chown ${USER}:${USER} /usr/local/bin/nimbus_execution_client
-# Cannot assume buildkit, hence no chmod
-COPY --chown=${USER}:${USER} ./docker-entrypoint.sh /usr/local/bin/
+RUN cp /usr/bin/fluffy /usr/local/bin/ && chown ${USER}:${USER} /usr/local/bin/fluffy
 # Belt and suspenders
 RUN chmod -R 755 /usr/local/bin/*
 
 USER ${USER}
 
-ENTRYPOINT ["nimbus_execution_client"]
+ENTRYPOINT ["fluffy"]

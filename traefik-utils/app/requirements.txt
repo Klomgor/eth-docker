@@ -7,7 +7,7 @@
 boto3==1.42.14 \
     --hash=sha256:a5d005667b480c844ed3f814a59f199ce249d0f5669532a17d06200c0a93119c \
     --hash=sha256:bfcc665227bb4432a235cb4adb47719438d6472e5ccbf7f09512046c3f749670
-    # via -r app/requirements.in
+    # via -r requirements.in
 botocore==1.42.14 \
     --hash=sha256:cf5bebb580803c6cfd9886902ca24834b42ecaa808da14fb8cd35ad523c9f621 \
     --hash=sha256:efe89adfafa00101390ec2c371d453b3359d5f9690261bc3bd70131e0d453e8e
@@ -116,7 +116,7 @@ python-dateutil==2.9.0.post0 \
 requests==2.32.5 \
     --hash=sha256:2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6 \
     --hash=sha256:dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf
-    # via -r app/requirements.in
+    # via -r requirements.in
 s3transfer==0.16.0 \
     --hash=sha256:18e25d66fed509e3868dc1572b3f427ff947dd2c56f844a5bf09481ad3f3b2fe \
     --hash=sha256:8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920
@@ -128,10 +128,10 @@ six==1.17.0 \
 tenacity==9.1.2 \
     --hash=sha256:1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb \
     --hash=sha256:f77bf36710d8b73a50b2dd155c97b870017ad21afe6ab300326b0371b3b05138
-    # via -r app/requirements.in
-urllib3==2.5.0 \
-    --hash=sha256:3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760 \
-    --hash=sha256:e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc
+    # via -r requirements.in
+urllib3==2.6.0 \
+    --hash=sha256:c90f7a39f716c572c4e3e58509581ebd83f9b59cced005b7db7ad2d22b0db99f \
+    --hash=sha256:cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1
     # via
     #   botocore
     #   requests
